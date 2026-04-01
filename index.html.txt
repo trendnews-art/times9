@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電話のやりとりも大変そう、、</title>
+
+    <meta property="og:title" content="電話のやりとりも大変そう、、">
+    <meta property="og:description" content=" ">
+    <meta property="og:image" content="https://trendnews-art.github.io/times/IMG_2609.jpeg"> 
+    <meta property="og:url" content="https://trendnews-art.github.io/times/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 30px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card h2 {
+            font-size: 18px;
+            color: #333;
+            margin: 20px 15px;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c83fd, #9656fa);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            width: 70%;
+            box-sizing: border-box;
+            transition: opacity 0.3s;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="IMG_2609.jpeg" alt="ニュース画像">
+        
+        <h2>電話のやりとりも大変そう、、</h2>
+        
+        <a href="https://lite.tiktok.com/t/ZS9R3xFb1XBUn-Fh90M/" class="btn">➔ タップして視聴する</a>
+    </div>
+
+</body>
+</html>
