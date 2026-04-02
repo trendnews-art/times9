@@ -22,6 +22,8 @@
             margin: 0;
             font-family: sans-serif;
         }
+        
+        /* 💡 変更点①：カード全体をリンクにするための設定を追加 */
         .card {
             background-color: #ffffff;
             border-radius: 20px;
@@ -31,17 +33,32 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
             padding-bottom: 30px;
+            
+            /* 下記を追加してリンクとしての見た目・挙動を整えます */
+            text-decoration: none; /* リンク特有の下線を消す */
+            color: inherit; /* テキストの色を通常通りにする */
+            display: block; /* ブロック要素として扱う */
+            -webkit-tap-highlight-color: transparent; /* スマホでタップした時の青い枠を消す */
+            transition: transform 0.2s; /* タップした時のアニメーション用 */
         }
+        
+        /* 💡 おまけ：スマホでタップした時にカードが少し沈むエフェクトをつけると押し心地が良くなります */
+        .card:active {
+            transform: scale(0.98);
+        }
+
         .card img {
             width: 100%;
             height: auto;
             display: block;
         }
+        
         .card h2 {
             font-size: 18px;
             color: #333;
             margin: 20px 15px;
         }
+        
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, #7c83fd, #9656fa);
@@ -55,20 +72,17 @@
             box-sizing: border-box;
             transition: opacity 0.3s;
         }
-        .btn:hover {
-            opacity: 0.8;
-        }
     </style>
 </head>
 <body>
 
-    <div class="card">
+    <a href="https://lite.tiktok.com/t/ZS98SWXG4J5q6-QIWCJ/" class="card">
         <img src="IMG_2835.jpeg" alt="ニュース画像">
         
         <h2>【続き】駅員に頭突きして辺りは騒然・・・</h2>
         
-        <a href="https://lite.tiktok.com/t/ZS98SWXG4J5q6-QIWCJ/" class="btn">➔ タップして視聴する</a>
-    </div>
+        <div class="btn">➔ タップして視聴する</div>
+    </a>
 
 </body>
 </html>
