@@ -21,27 +21,9 @@
             min-height: 100vh;
             margin: 0;
             font-family: sans-serif;
-            flex-direction: column; /* バナー表示用に縦並びにする */
         }
         
-        /* 💡 アプリ内ブラウザで開かれた時の案内バナー用デザイン */
-        #iab-warning {
-            display: none; /* 初期状態は非表示 */
-            background-color: #ff4c4c;
-            color: white;
-            width: 100%;
-            text-align: center;
-            padding: 12px 10px;
-            font-size: 14px;
-            font-weight: bold;
-            box-sizing: border-box;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
+        /* 💡 変更点①：カード全体をリンクにするための設定を追加 */
         .card {
             background-color: #ffffff;
             border-radius: 20px;
@@ -51,14 +33,16 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: center;
             padding-bottom: 30px;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            -webkit-tap-highlight-color: transparent;
-            transition: transform 0.2s;
-            margin-top: 60px; /* バナーとかぶらないように余白を作る */
+            
+            /* 下記を追加してリンクとしての見た目・挙動を整えます */
+            text-decoration: none; /* リンク特有の下線を消す */
+            color: inherit; /* テキストの色を通常通りにする */
+            display: block; /* ブロック要素として扱う */
+            -webkit-tap-highlight-color: transparent; /* スマホでタップした時の青い枠を消す */
+            transition: transform 0.2s; /* タップした時のアニメーション用 */
         }
         
+        /* 💡 おまけ：スマホでタップした時にカードが少し沈むエフェクトをつけると押し心地が良くなります */
         .card:active {
             transform: scale(0.98);
         }
@@ -92,38 +76,13 @@
 </head>
 <body>
 
-    <div id="iab-warning">
-        ⚠️ アプリがうまく開かない場合<br>
-        右上の「･･･」から「ブラウザで開く」を選んでください
-    </div>
-
-    <a href="https://lite.tiktok.com/t/ZS98SWXG4J5q6-QIWCJ/" class="card" target="_blank" rel="noopener noreferrer">
+    <a href="https://lite.tiktok.com/t/ZS98SWXG4J5q6-QIWCJ/" class="card">
         <img src="IMG_2835.jpeg" alt="ニュース画像">
         
         <h2>【続き】駅員に頭突きして辺りは騒然・・・</h2>
         
         <div class="btn">➔ タップして視聴する</div>
     </a>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var ua = navigator.userAgent || navigator.vendor || window.opera;
-            // スレッズ、Instagram、FB、LINEなどの内部ブラウザ特有の文字列を検知
-            var isIAB = (ua.indexOf("Instagram") > -1) || 
-                        (ua.indexOf("FBAN") > -1) || 
-                        (ua.indexOf("FBAV") > -1) || 
-                        (ua.indexOf("Threads") > -1) || 
-                        (ua.indexOf("Line") > -1);
-            
-            if (isIAB) {
-                // アプリ内ブラウザの場合は警告バナーを表示
-                document.getElementById('iab-warning').style.display = 'block';
-            } else {
-                // 通常のブラウザの場合はカードの位置を元に戻す
-                document.querySelector('.card').style.marginTop = '0';
-            }
-        });
-    </script>
 
 </body>
 </html>
